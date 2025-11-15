@@ -29,40 +29,78 @@ from utils.excel_writer import (
 
 def check_auth():
     """
-    Authentification basique (login + mot de passe) avec st.secrets :
+    Authentification basique (login + mot de passe).
 
-    [auth]
-    USERNAME = "..."
-    PASSWORD = "..."
+    Sources possibles :
+    1) Variables d'environnement / secrets plats (Cloud ou .env) :
+       - AUTH_USERNAME ou USERNAME
+       - AUTH_PASSWORD ou PASSWORD
+    2) Secrets sectionnés (local : .streamlit/secrets.toml) :
+       [auth]
+       USERNAME = "..."
+       PASSWORD = "..."
     """
+
+    import os
+
+    # 1) Essayer d'abord env / secrets plats
+    username = os.getenv("AUTH_USERNAME") or os.getenv("USERNAME")
+    password = os.getenv("AUTH_PASSWORD") or os.getenv("PASSWORD")
+
     try:
-        valid_username = st.secrets["auth"]["USERNAME"]
-        valid_password = st.secrets["auth"]["PASSWORD"]
+        # secrets plats (cloud) → st.secrets["AUTH_USERNAME"], st.secrets["USERNAME"], etc.
+        if not username:
+            username = (
+                st.secrets.get("AUTH_USERNAME")
+                if "AUTH_USERNAME" in st.secrets
+                else st.secrets.get("USERNAME", username)
+            )
+        if not password:
+            password = (
+                st.secrets.get("AUTH_PASSWORD")
+                if "AUTH_PASSWORD" in st.secrets
+                else st.secrets.get("PASSWORD", password)
+            )
+
+        # 2) Fallback local : section [auth]
+        if ("auth" in st.secrets) and (not username or not password):
+            auth_sec = st.secrets["auth"]
+            if not username:
+                username = auth_sec.get("USERNAME")
+            if not password:
+                password = auth_sec.get("PASSWORD")
     except Exception:
-        # Si pas de secrets auth, on laisse passer (utile en dev)
+        # Si st.secrets pas dispo ou autre, on ignore
+        pass
+
+    # Si toujours rien → pas d'auth configurée → app ouverte
+    if not username or not password:
+        st.warning("Authentification non configurée — accès non protégé.")
         return
 
+    # État de session
     if "authenticated" not in st.session_state:
         st.session_state.authenticated = False
 
     if st.session_state.authenticated:
         return
 
-    st.title("🩺 CESU 83 — Accès sécurisé")
-
-    username = st.text_input("Nom d'utilisateur")
-    password = st.text_input("Mot de passe", type="password")
+    # Formulaire de login
+    st.title("🔐 Authentification requise")
+    in_user = st.text_input("Nom d'utilisateur")
+    in_pass = st.text_input("Mot de passe", type="password")
     login = st.button("Se connecter")
 
     if login:
-        if username == valid_username and password == valid_password:
+        if in_user == username and in_pass == password:
             st.session_state.authenticated = True
             st.success("Connexion réussie ✅")
+            st.experimental_rerun()
         else:
             st.error("Identifiants incorrects ❌")
 
-    # Bloque le reste de l'app tant qu'on n'est pas connecté
     st.stop()
+
 
 
 # =====================================================

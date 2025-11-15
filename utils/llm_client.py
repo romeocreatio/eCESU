@@ -1,9 +1,9 @@
 # utils/llm_client.py
 import json
 from pathlib import Path
+import os
 
 from openai import OpenAI
-import streamlit as st
 
 
 def load_prompt(path: str) -> str:
@@ -19,43 +19,62 @@ def _coerce_json(text: str) -> dict:
         return json.loads(text)
     except Exception:
         pass
-    # fallback simple
     start = text.find("{")
     end = text.rfind("}")
     if start >= 0 and end > start:
         try:
-            return json.loads(text[start:end+1])
+            return json.loads(text[start : end + 1])
         except Exception:
             pass
     raise ValueError("Réponse LLM non JSON.")
 
 
-def _get_openai_client_and_model() -> tuple[OpenAI, str]:
+def _get_openai_client_and_model():
     """
-    Récupère le client OpenAI et le modèle à partir des secrets Streamlit.
-
-    secrets.toml attendu :
-
-    [openai]
-    API_KEY = "ta_cle_openai_ici"
-    MODEL = "gpt-4.1-mini"  # par exemple
+    Stratégie de récupération des credentials :
+    1) Variables d'environnement (.env ou secrets cloud exposés en env) :
+       - OPENAI_API_KEY
+       - OPENAI_MODEL
+    2) Secrets Streamlit "plats" (cloud ou local):
+       - st.secrets["OPENAI_API_KEY"]
+       - st.secrets["OPENAI_MODEL"]
+    3) Secrets Streamlit sectionnés (local) :
+       - st.secrets["openai"]["API_KEY"]
+       - st.secrets["openai"]["MODEL"]
     """
+
+    api_key = os.getenv("OPENAI_API_KEY")
+    model = os.getenv("OPENAI_MODEL")
+
+    # Essayer les secrets Streamlit s'ils existent
     try:
-        openai_section = st.secrets["openai"]
-    except Exception as e:
-        raise RuntimeError(
-            "Section [openai] manquante dans les secrets Streamlit. "
-            "Vérifie ton .streamlit/secrets.toml ou les secrets Streamlit Cloud."
-        ) from e
+        import streamlit as st  # import local pour que ce module reste utilisable hors Streamlit
 
-    api_key = openai_section.get("API_KEY")
+        # Forme "plate" (cloud)
+        if not api_key and "OPENAI_API_KEY" in st.secrets:
+            api_key = st.secrets["OPENAI_API_KEY"]
+        if not model and "OPENAI_MODEL" in st.secrets:
+            model = st.secrets["OPENAI_MODEL"]
+
+        # Forme sectionnée (local: [openai])
+        if "openai" in st.secrets:
+            sec = st.secrets["openai"]
+            if not api_key:
+                api_key = sec.get("API_KEY", api_key)
+            if not model:
+                model = sec.get("MODEL", model)
+    except Exception:
+        # Si Streamlit n'est pas dispo (scripts unitaires), on ignore
+        pass
+
     if not api_key:
         raise RuntimeError(
-            "Clé API OpenAI manquante dans les secrets (openai.API_KEY)."
+            "Aucune clé API OpenAI trouvée.\n"
+            "Configure OPENAI_API_KEY dans ton .env ou dans les secrets Streamlit Cloud."
         )
 
-    # Modèle optionnel dans les secrets, avec une valeur par défaut
-    model = openai_section.get("MODEL", "gpt-4.1-mini")
+    if not model:
+        model = "gpt-4.1-mini"
 
     client = OpenAI(api_key=api_key)
     return client, model
@@ -64,22 +83,21 @@ def _get_openai_client_and_model() -> tuple[OpenAI, str]:
 def call_llm_extract_json(prompt_master: str, full_text: str, meta: dict) -> dict:
     """
     Appelle un LLM avec response_format JSON.
-    Utilise les secrets Streamlit : [openai].API_KEY et [openai].MODEL.
+    Utilise :
+      - OPENAI_API_KEY / OPENAI_MODEL (env)
+      - ou les secrets Streamlit (plats ou sectionnés).
     """
     client, model = _get_openai_client_and_model()
 
-    # Construit le prompt final
     system_msg = (
         "Tu es un extracteur documentaire strict. "
         "Tu renvoies uniquement du JSON conforme au schéma demandé."
     )
 
-    user_content = (
-        prompt_master.replace("{{PDF_TEXT}}", full_text)
-        .replace("{{PDF_METADATA}}", json.dumps(meta, ensure_ascii=False))
+    user_content = prompt_master.replace("{{PDF_TEXT}}", full_text).replace(
+        "{{PDF_METADATA}}", json.dumps(meta, ensure_ascii=False)
     )
 
-    # Appel
     resp = client.chat.completions.create(
         model=model,
         messages=[
