@@ -1,0 +1,60 @@
+###############################################
+# 1. Environnement Python (à ne jamais pousser)
+###############################################
+
+# Environnement virtuel local
+.venv/
+venv/
+ENV/
+
+# Fichiers Python compilés
+__pycache__/
+*/__pycache__/
+
+
+###############################################
+# 2. Streamlit (fichiers sensibles)
+###############################################
+
+# Secrets locaux contenant les clés API
+# (Ne jamais pousser, jamais visible sur GitHub)
+.streamlit/
+
+
+###############################################
+# 3. Fichiers système / éditeur (sans intérêt)
+###############################################
+
+# VS Code
+.vscode/
+
+# System files Windows
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# Corbeille Windows
+$RECYCLE.BIN/
+
+
+###############################################
+# 4. Logs & caches divers
+###############################################
+
+# Logs
+*.log
+
+# Test caches
+.pytest_cache/
+.cache/
+.mypy_cache/
+
+
+###############################################
+# 5. Sauvegardes ou fichiers temporaires
+###############################################
+
+*.tmp
+*.bak
+*.swp
+*.orig

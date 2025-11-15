@@ -1,0 +1,275 @@
+{
+  "version_prompt": "v2.1",
+  "Nom formation": "IOA",
+  " semestre": "S2 2025 ",
+  "pre_formation": {
+    "volonte_suivi_formation": {
+      "nb votants": 8
+    },
+    "souhaitez_vous_suivre_distribution": [
+      {
+        "echele 5": "5",
+        "nb_votants": 6,
+        "pourcentage": 75.0
+      },
+      {
+        "echele 4": "4",
+        "nb_votants": 0,
+        "pourcentage": 0.0
+      },
+      {
+        "echele 3": "3",
+        "nb_votants": 2,
+        "pourcentage": 25.0
+      },
+      {
+        "echele 2": "2",
+        "nb_votants": 0,
+        "pourcentage": 0.0
+      },
+      {
+        "echele 1": "1",
+        "nb_votants": 0,
+        "pourcentage": 0.0
+      }
+    ],
+    "demande_sujets_a_aborder": [
+      "Les différents niveaux de gravité aux urgences. Les diagnostics infirmiers. Les circuits \"courts\" et \"longs\" des patients aux urgences.",
+      "Échelles de tri Lectures tracés ECG Amélioration de la PEC des patients à l’IOA",
+      "La pédiatrie",
+      "Juger la gravité en fonction de l’état clinique du patient",
+      "Critères d'urgences. réorientation des patients. gestion de l'agressivité. la communication en gestion de crise",
+      "Réorientation des patients Gestion de l agression",
+      "."
+    ],
+    "maitrise_objectifs_preformation": {
+      "mode": "4_niveaux",
+      "par_objectif": [
+        {
+          "objectif_label": "Les missions. postures professionnelles et difficultés du poste d'IOA",
+          "levels": {
+            "totalement": 1.0,
+            "en_partie": 4.0,
+            "insuffisamment": 3.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 6.9
+        },
+        {
+          "objectif_label": "Comment accueillir et orienter les femmes victimes de violences",
+          "levels": {
+            "totalement": 1.0,
+            "en_partie": 1.0,
+            "insuffisamment": 6.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 5.9
+        },
+        {
+          "objectif_label": "Quelle orientation pour les problématiques sociale prédominantes ou surajoutées à la demande de soins au SAU ?",
+          "levels": {
+            "totalement": 1.0,
+            "en_partie": 3.0,
+            "insuffisamment": 4.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 6.6
+        },
+        {
+          "objectif_label": "L'examen clinique infirmier orienté IOA",
+          "levels": {
+            "totalement": 1.0,
+            "en_partie": 5.0,
+            "insuffisamment": 2.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 7.2
+        },
+        {
+          "objectif_label": "Spécificités dans la prise en soin de patients atteints de troubles psychiatriques",
+          "levels": {
+            "totalement": 1.0,
+            "en_partie": 2.0,
+            "insuffisamment": 5.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 6.3
+        },
+        {
+          "objectif_label": "Le processus de triage à l'accueil du SAU en situation quotidienne",
+          "levels": {
+            "totalement": 2.0,
+            "en_partie": 4.0,
+            "insuffisamment": 2.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 7.5
+        },
+        {
+          "objectif_label": "Lecture de tracés ECG remarquables en urgence",
+          "levels": {
+            "totalement": 1.0,
+            "en_partie": 0.0,
+            "insuffisamment": 7.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 5.6
+        },
+        {
+          "objectif_label": "La connaissance des cadres administratifs et législatifs pour la fonction IDE",
+          "levels": {
+            "totalement": 2.0,
+            "en_partie": 3.0,
+            "insuffisamment": 3.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 7.2
+        },
+        {
+          "objectif_label": "La fonction du cerveau dans la communication",
+          "note_sur_10": 6.6
+        },
+        {
+          "objectif_label": "Les soins infirmiers en situation d’urgence",
+          "levels": {
+            "totalement": 2.0,
+            "en_partie": 5.0,
+            "insuffisamment": 0.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 8.1
+        },
+        {
+          "objectif_label": "La gestion des émotions : patients. familles. soi-même",
+          "levels": {
+            "totalement": 1.0,
+            "en_partie": 6.0,
+            "insuffisamment": 1.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 7.8
+        },
+        {
+          "objectif_label": "Gestion du stress et communication",
+          "levels": {
+            "totalement": 1.0,
+            "en_partie": 6.0,
+            "insuffisamment": 1.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 7.5
+        },
+        {
+          "objectif_label": "Spécificités dans la prise en soin de patients de la personne âgée filière gériatrie",
+          "levels": {
+            "totalement": 2.0,
+            "en_partie": 3.0,
+            "insuffisamment": 3.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 7.2
+        },
+        {
+          "objectif_label": "Spécificités de l'évaluation pédiatrique",
+          "levels": {
+            "totalement": 1.0,
+            "en_partie": 0.0,
+            "insuffisamment": 7.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 5.6
+        },
+        {
+          "objectif_label": "Organisation des urgences et des établissements de santé en Situation Sanitaire Exceptionnelle",
+          "levels": {
+            "totalement": 0.0,
+            "en_partie": 3.0,
+            "insuffisamment": 5.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 5.9
+        }
+      ]
+    }
+  },
+  "a_froid": {
+    "note_sur_10": 8.0,
+    "maitrise_objectifs_a_froid": {
+      "mode": "4_niveaux",
+      "par_objectif": [
+        {
+          "objectif_label": "L'examen clinique infirmier",
+          "levels": {
+            "totalement": 3.0,
+            "en_partie": 0.0,
+            "insuffisamment": 0.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 10.0
+        },
+        {
+          "objectif_label": "Le processus de triage",
+          "levels": {
+            "totalement": 2.0,
+            "en_partie": 1.0,
+            "insuffisamment": 0.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 9.2
+        },
+        {
+          "objectif_label": "Les sciences humaines",
+          "note_sur_10": 7.7
+        },
+        {
+          "objectif_label": "Les soins infirmiers en situation d’urgence",
+          "levels": {
+            "totalement": 3.0,
+            "en_partie": 0.0,
+            "insuffisamment": 0.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 9.3
+        },
+        {
+          "objectif_label": "La connaissance des cadres administratifs et législatifs",
+          "note_sur_10": 7.3
+        },
+        {
+          "objectif_label": "Les aspects médico-sociaux",
+          "note_sur_10": 8.7
+        }
+      ]
+    },
+    "elements_les_plus_utiles": [
+      "Les cours de triage et évaluation ioa. l’xabcde. le cours sur plan blanc et le triage en situation exceptionnelle",
+      "Evaluation pediatrique.",
+      "ABCDE"
+    ]
+  },
+  "intervenants": {
+    "commentaire_conditions_materielles": "Installation pour diffuser mon power point efficace + paper board disponible - nous avons pu afficher notre diaporama super !",
+    "commentaire_groupe_apprenants": "Bonne taille pour permettre à la fois les échanges et l'écoute de chacun - Groupe très intéressé. dommage car il n'y avait pas d'apprenants de Ste Musse",
+    "commentaire_organisation_generale": "Que la journée sur la communication soit positionnée en fin de formation me semble toujours la bonne décision : les apprenants se connaissent déjà un peu. cela favorise les échanges - pour notre intervention très bien après le passage de Mouna",
+    "adaptation_horaires": {
+      "reponse": "non"
+    },
+    "explication_modification_programme": "-",
+    "contenu_non_prevu": {
+      "reponse": "oui",
+      "de_quoi_s_agissait_il": "prise en charge patient TSA avec déficience"
+    },
+    "retards_apprenants": {
+      "oui": 0.0,
+      "non": 8.0
+    },
+    "handicap_signale": {
+      "oui": 0.0,
+      "non": 8.0
+    }
+  },
+  "resultats_evaluations": {
+    "progression_competences_plus_sur_10": 1.83
+  },
+  "lien_vers_formation": "rapport_qualite_programme_ioa- deuxieme semestre 2024 (1).pdf"
+}

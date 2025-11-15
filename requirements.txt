@@ -1,0 +1,13 @@
+﻿streamlit==1.50.0
+python-dotenv>=1.0.1
+openai>=1.52.0
+PyMuPDF==1.24.10
+pytesseract>=0.3.10
+pdf2image>=1.17.0
+Pillow>=10.4.0
+pydantic>=2.8.2
+pdfplumber
+pdf2image 
+pytesseract 
+pillow
+openpyxl

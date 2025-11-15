@@ -1,0 +1,231 @@
+{
+  "version_prompt": "v2.1",
+  "Nom formation": "ACLS",
+  " semestre": "S1 2025",
+  "pre_formation": {
+    "volonte_suivi_formation": {
+      "nb votants": 8
+    },
+    "souhaitez_vous_suivre_distribution": [
+      {
+        "echele 5": "5",
+        "nb_votants": 8,
+        "pourcentage": 100.0
+      },
+      {
+        "echele 4": "4",
+        "nb_votants": 0,
+        "pourcentage": 0.0
+      },
+      {
+        "echele 3": "3",
+        "nb_votants": 0,
+        "pourcentage": 0.0
+      },
+      {
+        "echele 2": "2",
+        "nb_votants": 0,
+        "pourcentage": 0.0
+      },
+      {
+        "echele 1": "1",
+        "nb_votants": 0,
+        "pourcentage": 0.0
+      }
+    ],
+    "demande_sujets_a_aborder": [
+      "Troubles du rythme ACR SCA",
+      "lire et d'écrire les différents types d'ECG Effectuer une RCP de maniere optimale Utiliser le DEA et savoir reconnaitre un rythme chocable ou non",
+      "lecture d'ecg et réalisation d'action",
+      "PEC des fonctions vitales dans les situations critiques au bloc opératoire"
+    ],
+    "maitrise_objectifs_preformation": {
+      "mode": "4_niveaux",
+      "par_objectif": [
+        {
+          "objectif_label": "Savoir faire les gestes de réanimation de base. y compris des compressions thoraciques efficaces. et l'utilisation d'un DAE",
+          "levels": {
+            "totalement": 2.0,
+            "en_partie": 6.0,
+            "insuffisamment": 0.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 8.1
+        },
+        {
+          "objectif_label": "Savoir reconnaître et prendre en charge de manière précoce des arrêts respiratoires et cardiaques",
+          "levels": {
+            "totalement": 1.0,
+            "en_partie": 7.0,
+            "insuffisamment": 0.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 7.8
+        },
+        {
+          "objectif_label": "Savoir reconnaître et prendre en charge de manière précoce des affections péri-arrêt telles que la bradycardie symptomatique",
+          "levels": {
+            "totalement": 0.0,
+            "en_partie": 5.0,
+            "insuffisamment": 3.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 6.6
+        },
+        {
+          "objectif_label": "Savoir gérer les voies respiratoires",
+          "levels": {
+            "totalement": 5.0,
+            "en_partie": 3.0,
+            "insuffisamment": 0.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 9.1
+        },
+        {
+          "objectif_label": "Connaître la pharmacologie associée",
+          "levels": {
+            "totalement": 2.0,
+            "en_partie": 5.0,
+            "insuffisamment": 1.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 7.8
+        },
+        {
+          "objectif_label": "Connaître la prise en charge du SCA et de l'AVC",
+          "levels": {
+            "totalement": 0.0,
+            "en_partie": 6.0,
+            "insuffisamment": 2.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 6.9
+        },
+        {
+          "objectif_label": "Savoir communiquer efficacement en tant que membre et chef d'une équipe de réanimation",
+          "levels": {
+            "totalement": 0.0,
+            "en_partie": 3.0,
+            "insuffisamment": 5.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 5.9
+        }
+      ],
+      "note_globale_objectifs_preformation": 7.5
+    }
+  },
+  "a_chaud": {
+    "formation_profitable": {
+      "oui": 4.0,
+      "non": 0.0,
+      "oui_percent": 100.0,
+      "non_percent": 0.0
+    },
+    "satisfaction_contenu": [
+      {
+        "label": "Très satisfait(e)",
+        "count": 4.0,
+        "percent": 100.0
+      },
+      {
+        "label": "Satisfait(e)",
+        "count": 0.0,
+        "percent": 0.0
+      },
+      {
+        "label": "Déçu(e)",
+        "count": 0.0,
+        "percent": 0.0
+      },
+      {
+        "label": "Sans opinion",
+        "count": 0.0,
+        "percent": 0.0
+      }
+    ],
+    "note_globale_a_chaud": 10.0,
+    "points_forts": [
+      "Qualités des contenus",
+      "Pédagogie",
+      "Répétition des situations Passage en leader Algorithmes Équilibrés théorie pratique",
+      "Formateurs. simulation"
+    ],
+    "points_a_ajuster": [
+      "Aucune",
+      "RAS",
+      "Ras",
+      "Aucun"
+    ],
+    "suggestions_complement_sur_formation": [
+      "La faire sur 3 jours",
+      "RAS",
+      "Ras",
+      "Détresses vitales cardiologique"
+    ],
+    "appreciations_intervenants": [
+      "Excellents",
+      "Au top",
+      "Passionnés et de grande qualité",
+      "Super pédagogie"
+    ],
+    "maitrise_objectifs_a_chaud": {
+      "mode": "4_niveaux",
+      "par_objectif": [
+        {
+          "objectif_label": "Savoir faire les gestes de réanimation de base. y compris des compressions thoraciques efficaces. et l'utilisation d'un DAE",
+          "note_sur_10": 10.0
+        },
+        {
+          "objectif_label": "Savoir reconnaître et prendre en charge de manière précoce des arrêts respiratoires et cardiaques",
+          "note_sur_10": 9.8
+        },
+        {
+          "objectif_label": "Savoir reconnaître et prendre en charge de manière précoce des affections péri-arrêt telles que la bradycardie symptomatique",
+          "note_sur_10": 9.8
+        },
+        {
+          "objectif_label": "Savoir gérer les voies respiratoires",
+          "note_sur_10": 9.8
+        },
+        {
+          "objectif_label": "Connaître la pharmacologie associée",
+          "note_sur_10": 9.8
+        },
+        {
+          "objectif_label": "Connaître la prise en charge du SCA et de l'AVC",
+          "note_sur_10": 9.3
+        },
+        {
+          "objectif_label": "Savoir communiquer efficacement en tant que membre et chef d'une équipe de réanimation",
+          "note_sur_10": 9.3
+        }
+      ]
+    }
+  },
+  "a_froid": {},
+  "intervenants": {
+    "commentaire_conditions_materielles": "Rien à signaler Une clim HS. difficile par ces températures",
+    "commentaire_groupe_apprenants": "Homogène et motive Manque de médecins",
+    "commentaire_organisation_generale": "Ras Ras",
+    "adaptation_horaires": {
+      "reponse": "non"
+    },
+    "contenu_non_prevu": {
+      "reponse": "non"
+    },
+    "retards_apprenants": {
+      "oui": 0.0,
+      "non": 2.0
+    },
+    "handicap_signale": {
+      "oui": 0.0,
+      "non": 2.0
+    }
+  },
+  "resultats_evaluations": {
+    "progression_competences_plus_sur_10": 2.39
+  },
+  "lien_vers_formation": "rapport_qualite_programme_acls- premier semestre 2025 (1).pdf"
+}

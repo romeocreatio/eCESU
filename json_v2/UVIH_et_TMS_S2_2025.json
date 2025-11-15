@@ -1,0 +1,250 @@
+{
+  "version_prompt": "v2.1",
+  "Nom formation": " UVIH et TMS",
+  " semestre": "S2 2025 ",
+  "pre_formation": {
+    "volonte_suivi_formation": {
+      "nb votants": 23
+    },
+    "souhaitez_vous_suivre_distribution": [
+      {
+        "echele 5": "5",
+        "nb_votants": 17,
+        "pourcentage": 73.0
+      },
+      {
+        "echele 4": "4",
+        "nb_votants": 1,
+        "pourcentage": 4.0
+      },
+      {
+        "echele 3": "3",
+        "nb_votants": 3,
+        "pourcentage": 13.0
+      },
+      {
+        "echele 2": "2",
+        "nb_votants": 1,
+        "pourcentage": 4.0
+      },
+      {
+        "echele 1": "1",
+        "nb_votants": 1,
+        "pourcentage": 4.0
+      }
+    ],
+    "demande_sujets_a_aborder": [
+      "MANAVELLA Odessa Pas de particulier",
+      "DENIS Eva La prise en charge d un patient critique avec plus de facilité et d aisance",
+      "LAHMIDI Sarah Soins d’urgences . premiers secours . gestes qui sauve",
+      "ORHANT Stéphanie Urgences",
+      "LE FOURN Julie Gestion stress Communication entre membres équipe",
+      "MANTEL Dune Urgences intra hospitalière",
+      "BERTAUDIERE Frédérique Tout à été aborde",
+      "OLIVIER Clarisse Aucuns",
+      "MORELLI Amandine Communication Gestion du stress",
+      "ROQUEMAURE Karine Sans réponse",
+      "GODEFROY Nathalie circuit de prise en charge d'une urgence vitale. organisation en équipe apprendre et maitriser les gestes de premiers secours dans mon domaine de compétence (car médico-tech) sur mon lieu de travail mais aussi à l'extérieur.",
+      "DORE Estelle travail en equipe",
+      "BODET Edwin UVIH",
+      "AZARIAN Camille Comment faire face à une situation d'urgence. savoir identifier le problème. gérer le stress",
+      "FIORESE Chloé revoir les gestes de premiers secours",
+      "BLANCH Amelie Urgences vitales . urgences relatives .....",
+      "MUZZATI Sylvie Les mises en situation sont variées",
+      "ALATZO Brigitte ?",
+      "PIERI Eva S'exercer à la communication en équipe lors de situations d'urgence. Repartir efficacement les taches entre les soignants lors de situations d'urgence.",
+      "LEONARD Benoit .",
+      "LEBRUN Eleonore Coordination d équipe dans la prise en charge d une urgence en service",
+      "DUCRO Marine -l alerte - les appels au 1515 - les prises en charge des urgences",
+      "ALIBERT Marjorie Les premiers Secours"
+    ],
+    "maitrise_objectifs_preformation": {
+      "mode": "4_niveaux",
+      "par_objectif": [
+        {
+          "objectif_label": "Savoir agir efficacement en équipe",
+          "levels": {
+            "totalement": 2.0,
+            "en_partie": 14.0,
+            "insuffisamment": 4.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 7.3
+        }
+      ],
+      "note_globale_objectifs_preformation": 7.3
+    }
+  },
+  "a_chaud": {
+    "formation_profitable": {
+      "oui": 26.0,
+      "non": 0.0,
+      "oui_percent": 100.0,
+      "non_percent": 0.0
+    },
+    "satisfaction_contenu": [
+      {
+        "label": "Très satisfait(e)",
+        "count": 21.0,
+        "percent": 80.0
+      },
+      {
+        "label": "Satisfait(e)",
+        "count": 5.0,
+        "percent": 19.0
+      },
+      {
+        "label": "Déçu(e)",
+        "count": 0.0,
+        "percent": 0.0
+      },
+      {
+        "label": "Sans opinion",
+        "count": 0.0,
+        "percent": 0.0
+      }
+    ],
+    "note_globale_a_chaud": 9.5,
+    "points_forts": [
+      "L’échange entre paramédicaux et médicaux",
+      "La simulation",
+      "Le mannequin assez high tech avec le scope raccordé. le débriefing. les micros / caméras. l'intervention de Guenael",
+      "Les simulations. la présence de Guenna pour la posture",
+      "Mise en situation Débriefing",
+      "Très pro",
+      "bonne dynamique",
+      "Mise en situation filmée",
+      "Petit groupe",
+      "Simulations et débriefings Association avec un intervenant pour les postures",
+      "Le mannequin de haute fidélité",
+      "Les explications et simulations",
+      "Simulations en groupe avec respect des professions",
+      "Apprendrez les massages caardiaques",
+      "Mise en situation",
+      "Simulateur haute fidélité Dynamisme de l'équipe Double formation rachis permet d'éviter les temps morts c'est très sympa",
+      "Simulation",
+      "Les formateurs . les mannequins . les mises en situation . les topos et les temps de relaxation",
+      "Demande de l'investissement et bcp d'attention",
+      "Les simulations",
+      "Matériel et caméra",
+      "Petits effectifs Nombreuses simulations Récap de cours le premier et le deuxième jour",
+      "Les changements de rythme. Entre Ateliers et apprentissages théoriques",
+      "Petit groupe permettant de réaliser plusieures mise en situation Formation adaptée à nos besoins en terme de connaissances et de pratiques hospitalières",
+      "Beaucoup de pratique Matériel proche de la réalité Mannequin très fonctionnel",
+      "Beaucoup de mise en pratique"
+    ],
+    "points_a_ajuster": [
+      "Je n'ai pas d'idée de points à ajuster à part peut être diversifier un peu les sujets de simul. diminuer la quantité d'ACR simulés pour remplacer par un OAP par exemple ou un état de mal épileptique. comme je l'ai dit plus haut.",
+      "Un peu trop de monde pour la taille des locaux Disparités importantes des connaissances entre les stagiaires",
+      "Beaucoup d'informations sur 2 jours !!"
+    ],
+    "suggestions_complement_sur_formation": [
+      "Introduire les autres corps de métiers comme les tech de laboratoire",
+      "Hémorragie extériorisée Choc cardio génique (oap)",
+      "montrer la mise en PLS pour les personnes qui ne connaissant pas",
+      "Réduire la taille du groupe",
+      "Formation intense et très instructive !! La mise en situation est profitable"
+    ],
+    "appreciations_intervenants": [
+      "Très gentils Dynamiques Sans jugement",
+      "Professionnels et pedagogues",
+      "Les deux IDE et Julie la med ont été géniaux. très disponibles. dynamiques. bienveillants et pleins de ressources. Merci encore à eux et un grand merci à Guenael pour son travail incroyable sur notre posture. qui est un sujet que l'on n'aborde jamais en pratique. il a apporté un réel plus à cette UVIH.",
+      "Dynamiques. bienveillant. rigoureux",
+      "A l écoute Bienveillants Explications claires",
+      "Réassurance pour les personnes anxieuses comme moi",
+      "top et vraiment nécessaire. surtout en service de psychiatrie",
+      "Bienveillant.très a l écoute.",
+      "Accueillant. bienveillant",
+      "Bienveillants À l’écoute et ont su s’adapter aux différents profils professionnels notamment médico technique",
+      "très abordables et ne jugent pas",
+      "Très bienveillants pour tout le monde. prennent le temps d’expliquer",
+      "Au top. pédagogie. inclusifs. on s’est senti à l’aise et pas jugés",
+      "Génial À l’écoute Explique bien et s’adapte à tout niveaux",
+      "Parfait.e.s",
+      "Différentes origines prof donc très agréable Dynamique Enrichissant",
+      "Très bien . très professionnel et bien veillance",
+      "Intervenants accueillants . professionnels avec une très bonne transmission des savoirs et savoirs faire . l intervention d un ostéopathe était vraiment un plus en terme de connaissances et de relaxation",
+      "A l'écoute. investi",
+      "Bienveillants et competents",
+      "Tous très sympa et pédagogique",
+      "Les intervenants étaient bienveillants et motivés à nous transmettre leurs connaissances.",
+      "Une bonne complémentarité entre les différents intervenants. Le plus: Guenael et ses interventions pour la prévention de notre dos.",
+      "Intervenants qui ont mis à l aise . avec des propos clairs et adaptés",
+      "Professionnels Généreux Gentils Bienveillants",
+      "Intervenants accessibles. motivés et chaleureux"
+    ],
+    "maitrise_objectifs_a_chaud": {
+      "mode": "4_niveaux",
+      "par_objectif": [
+        {
+          "objectif_label": "Savoir agir efficacement en équipe",
+          "levels": {
+            "totalement": 10.0,
+            "en_partie": 15.0,
+            "insuffisamment": 1.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 8.4
+        }
+      ],
+      "note_globale_objectifs_a_chaud": 8.4
+    }
+  },
+  "a_froid": {
+    "note_sur_10": 9.3,
+    "maitrise_objectifs_a_froid": {
+      "mode": "4_niveaux",
+      "par_objectif": [
+        {
+          "objectif_label": "Savoir agir efficacement en équipe",
+          "levels": {
+            "totalement": 2.0,
+            "en_partie": 3.0,
+            "insuffisamment": 0.0,
+            "pas_du_tout": 0.0
+          },
+          "note_sur_10": 8.5
+        }
+      ],
+      "note_globale_objectifs_a_froid": 8.5
+    },
+    "elements_les_plus_utiles": [
+      "L'observation et la prise des constantes sans materiel",
+      "Savoir communiquer et le travail en équipe",
+      "D'avoir parler de chaque simulation toute suite après",
+      "L importance du XABCDE pour ne rien oublier et ne pas passer à côté d un élément clé pour la prise en charge du patient",
+      "Les mises en situation",
+      "Les mises en situation qui nous permettent de mettre en pratique nos connaissances La diversité des professions représentées Les rappels de cours."
+    ]
+  },
+  "intervenants": {
+    "commentaire_conditions_materielles": "Bonne Correct Parfait Ras Au top du top Ras Ras Matériel. fonctionnel et en très bon état",
+    "commentaire_groupe_apprenants": "Dynamique curieux Dynamique Dynamique. intéressé et dynamique Impliqué Groupe hétérogène. mais bien impliqué Très bon groupe avec beaucoup de bienveillance Intéressé. présent agréable Gpe dynamique Très volontaire Groupe restreint permettant de bonnes conditions d’apprentissage",
+    "commentaire_organisation_generale": "Ludique Top Ras Timing respecté. conducteur entièrement réalisé ras Bonne organisation Fluide entre les interventions et celles des formateur UVIH Bon enchaînement avec tms et simulation Très bonne formation",
+    "adaptation_horaires": {
+      "reponse": "oui",
+      "precisions": "Je m’adapte toujours Finir les modules"
+    },
+    "precisions_a_noter": "Je m’adapte toujours Finir les modules",
+    "explication_modification_programme": "Simulation adapté au milieu professionnel de l’agent Placement de capteurs spécifiques posture Distribution d’une ceinture lombaire Je m’adapte toujours au groupe et au rythme de la formation UVIH Rajout d'une séance de simulation car du temps dispo Une simulation faite en plus . refaite par rapport a une émotion frustrée d un apprenant donc on a refait et l émotion était bonne a la deuxième fois",
+    "contenu_non_prevu": {
+      "reponse": "non",
+      "de_quoi_s_agissait_il": "8 simulation faites"
+    },
+    "retards_apprenants": {
+      "oui": 0.0,
+      "non": 12.0
+    },
+    "handicap_signale": {
+      "oui": 3.0,
+      "non": 9.0
+    }
+  },
+  "resultats_evaluations": {
+    "progression_competences_plus_sur_10": 1.25
+  },
+  "meta_extraction": {
+    "graphique_non_lisible": false
+  },
+  "lien_vers_formation": "rapport_qualite_programme_uvih-et-tms- deuxieme semestre 2024 (1).pdf"
+}
