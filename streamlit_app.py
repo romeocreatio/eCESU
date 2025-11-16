@@ -107,7 +107,7 @@ def check_auth():
 # ⚙️ Config Streamlit
 # =====================================================
 
-st.set_page_config(page_title="CESU 83 - Extracteur Digiforma", page_icon="🩺", layout="wide")
+st.set_page_config(page_title="CESU 83 - Extracteur Qualité", page_icon="🩺", layout="wide")
 
 # Appliquer l'auth dès le début
 check_auth()
