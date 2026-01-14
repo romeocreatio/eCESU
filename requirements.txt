@@ -11,3 +11,5 @@ pdf2image
 pytesseract 
 pillow
 openpyxl
+gspread
+google-auth

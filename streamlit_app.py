@@ -23,6 +23,10 @@ from utils.excel_writer import (
     TABLE_NAME,
 )
 
+# ✅ NEW: Google Sheets injection
+from utils.google_sheets_writer import append_json_to_google_sheet
+
+
 # =====================================================
 # 🔐 Authentification simple via secrets
 # =====================================================
@@ -40,8 +44,6 @@ def check_auth():
        USERNAME = "..."
        PASSWORD = "..."
     """
-
-    import os
 
     # 1) Essayer d'abord env / secrets plats
     username = os.getenv("AUTH_USERNAME") or os.getenv("USERNAME")
@@ -102,7 +104,6 @@ def check_auth():
     st.stop()
 
 
-
 # =====================================================
 # ⚙️ Config Streamlit
 # =====================================================
@@ -155,7 +156,7 @@ def _normalize_satisfaction_labels(v2: dict) -> None:
             it["label"] = mapping[lbl]
 
 
-def _coerce_int_from_votants(s: str) -> int | None:
+def _coerce_int_from_votants(s: str):
     if not isinstance(s, str):
         return None
     m = re.search(r"(\d+)\s+votant", s)
@@ -568,17 +569,36 @@ if json_payload:
     st.caption("Aperçu des clés du JSON Excel détectées :")
     st.code(", ".join(json_payload.keys()), language="text")
 
-# Bouton d'injection
-_empt, right = st.columns([3, 1])
-with right:
-    inject = st.button(
+# ✅ NEW: Deux boutons (Excel + Google Sheets)
+_empt, col_excel, col_gs = st.columns([2, 1, 1])
+
+with col_excel:
+    inject_excel = st.button(
         "➡️ Générer l'Excel final",
         type="primary",
         use_container_width=True,
         disabled=(json_payload is None or not sheet_name or not table_name),
     )
 
-if inject and json_payload:
+with col_gs:
+    inject_gs = st.button(
+        "📤 Injecter dans Google Sheets",
+        use_container_width=True,
+        disabled=(json_payload is None),
+    )
+
+# ✅ NEW: Injection Google Sheets
+if inject_gs and json_payload:
+    with st.spinner("Injection dans Google Sheets en cours…"):
+        try:
+            row_idx = append_json_to_google_sheet(json_payload)
+            st.success(f"✅ Données injectées dans Google Sheets (ligne {row_idx})")
+        except Exception as e:
+            st.error("❌ Erreur lors de l'injection dans Google Sheets")
+            st.exception(e)
+
+# Injection Excel (inchangé, juste renommage inject -> inject_excel)
+if inject_excel and json_payload:
     # Phase 3 cloud-friendly : on lit le template, on injecte en mémoire, on renvoie les bytes
     template_path = project_root / EXCEL_PATH_DEFAULT
     if not template_path.exists():
