@@ -91,7 +91,7 @@ def check_auth():
         if in_user == username and in_pass == password:
             st.session_state.authenticated = True
             st.success("Connexion réussie ✅")
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("Identifiants incorrects ❌")
 
