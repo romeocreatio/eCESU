@@ -81,12 +81,6 @@ def check_auth():
         return
 
     # Formulaire de login
-    project_root = Path(__file__).parent
-    logo_path = project_root / "assets" / "logo_cesu83.jpeg"
-
-    if logo_path.exists():
-        st.image(str(logo_path), width=120)
-
     st.title("🔐 Authentification requise")
 
     # Champs inchangés sauf le label
@@ -99,7 +93,7 @@ def check_auth():
 # ⚙️ Config Streamlit
 # =====================================================
 
-st.set_page_config(page_title="eCESU - Extracteur Qualité", page_icon="🩺", layout="wide")
+st.set_page_config(page_title="CESU 83 - Extracteur Qualité", page_icon="🩺", layout="wide")
 
 # Appliquer l'auth dès le début
 check_auth()
@@ -304,7 +298,7 @@ with col_logo:
         )
 with col_title:
     st.markdown(
-        "<h2 style='text-align:center;margin-top:0;'>eCESU — Extracteur de Rapports Qualité</h2>",
+        "<h2 style='text-align:center;margin-top:0;'>CESU 83 — Extracteur de Rapports Qualité</h2>",
         unsafe_allow_html=True,
     )
 
