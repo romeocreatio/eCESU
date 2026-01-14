@@ -16,14 +16,7 @@ from utils.schema import OutputPayload  # v2.1
 from utils.convert_v2_to_excel import generate_json_excel
 
 # phase 3
-from utils.excel_writer import (
-    append_json_to_named_table_in_memory,
-    EXCEL_PATH_DEFAULT,
-    SHEET_NAME,
-    TABLE_NAME,
-)
-
-# ✅ NEW: Google Sheets injection
+# Google Sheets injection
 from utils.google_sheets_writer import append_json_to_google_sheet
 
 
@@ -519,10 +512,10 @@ else:
 st.markdown("---")
 
 # =====================================================
-# Phase 3 — Injection Excel (génération XLSX en mémoire)
+# Phase 3 — Injection Google Sheets (prod)
 # =====================================================
 
-st.subheader("Phase 3 — Injection Excel")
+st.subheader("Phase 3 — Injection Google Sheets")
 
 json_excel_dir = DIR_JSON_EXCEL
 json_excel_dir.mkdir(exist_ok=True)
@@ -558,95 +551,40 @@ else:
         except Exception as e:
             st.error(f"JSON invalide: {e}")
 
-with colR:
-    # On garde la possibilité d'ajuster la feuille / table, mais on fixe le template
-    st.text_input("Fichier Excel (template consolidé)", value=EXCEL_PATH_DEFAULT, disabled=True)
-    sheet_name = st.text_input("Feuille cible", value=SHEET_NAME)
-    table_name = st.text_input("Nom du tableau Excel", value=TABLE_NAME)
-
-# Aperçu des clés JSON et rappel des colonnes Excel attendues (facultatif si tu veux)
+# Aperçu des clés JSON (utile en prod)
 if json_payload:
     st.caption("Aperçu des clés du JSON Excel détectées :")
     st.code(", ".join(json_payload.keys()), language="text")
 
-# ✅ NEW: Deux boutons (Excel + Google Sheets)
-_empt, col_excel, col_gs = st.columns([2, 1, 1])
+# Anti-doublon (simple et efficace)
+import hashlib
 
-with col_excel:
-    inject_excel = st.button(
-        "➡️ Générer l'Excel final",
-        type="primary",
-        use_container_width=True,
-        disabled=(json_payload is None or not sheet_name or not table_name),
-    )
+def _payload_hash(d: dict) -> str:
+    raw = json.dumps(d, sort_keys=True, ensure_ascii=False).encode("utf-8")
+    return hashlib.sha256(raw).hexdigest()
 
-with col_gs:
-    inject_gs = st.button(
-        "📤 Injecter dans Google Sheets",
-        use_container_width=True,
-        disabled=(json_payload is None),
-    )
+if "injected_hashes" not in st.session_state:
+    st.session_state.injected_hashes = set()
 
-# ✅ NEW: Injection Google Sheets
+# Bouton unique : injecter dans Google Sheets
+inject_gs = st.button(
+    "📤 Injecter dans Google Sheets (Drive)",
+    type="primary",
+    use_container_width=True,
+    disabled=(json_payload is None),
+)
+
 if inject_gs and json_payload:
-    with st.spinner("Injection dans Google Sheets en cours…"):
-        try:
-            row_idx = append_json_to_google_sheet(json_payload)
-            st.success(f"✅ Données injectées dans Google Sheets (ligne {row_idx})")
-        except Exception as e:
-            st.error("❌ Erreur lors de l'injection dans Google Sheets")
-            st.exception(e)
+    h = _payload_hash(json_payload)
 
-# Injection Excel (inchangé, juste renommage inject -> inject_excel)
-if inject_excel and json_payload:
-    # Phase 3 cloud-friendly : on lit le template, on injecte en mémoire, on renvoie les bytes
-    template_path = project_root / EXCEL_PATH_DEFAULT
-    if not template_path.exists():
-        st.error(f"Template Excel introuvable : {template_path}")
+    if h in st.session_state.injected_hashes:
+        st.warning("⚠️ Ce JSON semble déjà injecté (doublon évité).")
     else:
-        with st.spinner("Injection en cours (génération du fichier Excel en mémoire)…"):
+        with st.spinner("Injection dans Google Sheets en cours…"):
             try:
-                template_bytes = template_path.read_bytes()
-                excel_bytes, info = append_json_to_named_table_in_memory(
-                    json_excel=json_payload,
-                    template_bytes=template_bytes,
-                    sheet_name=sheet_name,
-                    table_name=table_name,
-                )
-
-                st.success(
-                    f"Ligne ajoutée avec succès dans le modèle en mémoire "
-                    f"(feuille: {info['sheet']}, table: {info['table']}), "
-                    f"ligne n° {info['inserted_row']}."
-                )
-
-                # Avertissements utiles
-                if info["json_keys_without_column"]:
-                    st.warning(
-                        "Clés JSON sans colonne correspondante (ignorées) : "
-                        + ", ".join(info["json_keys_without_column"])
-                    )
-                if info["excel_columns_without_value"]:
-                    st.info(
-                        "Colonnes Excel sans valeur pour ce JSON : "
-                        + ", ".join(info["excel_columns_without_value"])
-                    )
-
-                # 💾 Téléchargement de l'Excel final (Phase 3)
-                out_excel_name = (
-                    (chosen_name or "rapport_qualite_final.json").replace(".json", ".xlsx")
-                )
-
-                st.download_button(
-                    label="📥 Télécharger l'Excel final (Phase 3)",
-                    data=excel_bytes,
-                    file_name=out_excel_name,
-                    mime=(
-                        "application/vnd.openxmlformats-officedocument."
-                        "spreadsheetml.sheet"
-                    ),
-                    use_container_width=True,
-                )
-
+                row_idx = append_json_to_google_sheet(json_payload)
+                st.session_state.injected_hashes.add(h)
+                st.success(f"✅ Données injectées dans Google Sheets (ligne {row_idx}).")
             except Exception as e:
-                st.error(f"Erreur lors de l'injection / génération Excel : {e}")
+                st.error("❌ Erreur lors de l'injection dans Google Sheets")
+                st.exception(e)
