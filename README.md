@@ -178,13 +178,13 @@ Les choix techniques sont pensés pour répondre aux contraintes d’environneme
 
 Ce projet illustre une approche orientée :
 
-ingénierie des données
+- Ingénierie des données
 
-automatisation intelligente
+- Automatisation intelligente
 
-qualité et gouvernance des données
+- Qualité et gouvernance des données
 
-industrialisation des processus
+- Industrialisation des processus
 
 Il a été conçu comme un système robuste, destiné à transformer des processus manuels complexes en chaînes de traitement fiables, reproductibles et scalables.
 
