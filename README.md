@@ -1,4 +1,4 @@
-📊 Logiciel eCESU - Automatisation d’analyse de rapports qualité
+📊 eCESU - Automatisation d’analyse de rapports qualité
 
 🩺 Présentation du projet
 
