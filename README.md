@@ -191,7 +191,9 @@ Il a été conçu comme un système robuste, destiné à transformer des process
 ✍️ Auteur
 
 Développé par Roméo Botuli
+
 Ingénieur Data & Intelligence Artificielle
+
 Projet réalisé dans un contexte institutionnel (CESU 83)
 
 
